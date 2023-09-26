@@ -1,9 +1,16 @@
-export const capitalize = () => {
-    // todo: build this function
-    // `capitalize("jOn")` should output `"Jon"`
-}
+export const capitalize = (name: string): string => {
+  if (name === "") {
+    return "";
+  } else {
+    name.toLowerCase();
+    return name[0].toUpperCase() + name.slice(1);
+  }
+};
 
-export const formatPhoneNumber = () => {
-    // todo: build this function
-    // `formatPhoneNumber("1234567")` should be `"12-34-56-7"`
-}
+export const formatPhoneNumber = (phone: string): string =>
+  phone === ""
+    ? ""
+    : `${phone.slice(0, 2)}
+    -${phone.slice(2, 4)}
+    -${phone.slice(4, 6)}
+    -${phone.slice(6)}`;
