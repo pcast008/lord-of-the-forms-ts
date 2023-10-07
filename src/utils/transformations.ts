@@ -7,7 +7,7 @@ export const capitalize = (name: string): string => {
   }
 };
 
-export const formatPhoneNumber = (phone: string): string =>
+export const formatPhone = (phone: string): string =>
   phone === ""
     ? ""
     : `${phone.slice(0, 2)}

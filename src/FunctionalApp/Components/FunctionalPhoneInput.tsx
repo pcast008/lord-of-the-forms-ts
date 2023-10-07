@@ -1,4 +1,4 @@
-import { TextInputWithoutLabel } from "./TextInputWithoutLabel";
+import { TextInputWithoutLabel } from "./FunctionalTextInputWithoutLabel";
 
 export const PhoneInput = ({
   phoneInputState,
@@ -17,6 +17,12 @@ export const PhoneInput = ({
   phoneRef2: React.RefObject<HTMLInputElement>;
   phoneRef3: React.RefObject<HTMLInputElement>;
 }): JSX.Element => {
+  function onKeyDown(e: React.KeyboardEvent) {
+    if (isNaN(Number(e.key)) && e.key !== "Backspace") {
+      e.preventDefault();
+    }
+  }
+
   return (
     <div className="input-wrap">
       <label htmlFor="phone">Phone:</label>
@@ -31,6 +37,9 @@ export const PhoneInput = ({
             ref: phoneRef0,
             maxLength: 2,
             autoComplete: "off",
+            onKeyDown: (e) => {
+              onKeyDown(e);
+            },
           }}
         />
         -
@@ -44,6 +53,9 @@ export const PhoneInput = ({
             ref: phoneRef1,
             maxLength: 2,
             autoComplete: "off",
+            onKeyDown: (e) => {
+              onKeyDown(e);
+            },
           }}
         />
         -
@@ -57,6 +69,9 @@ export const PhoneInput = ({
             ref: phoneRef2,
             maxLength: 2,
             autoComplete: "off",
+            onKeyDown: (e) => {
+              onKeyDown(e);
+            },
           }}
         />
         -
@@ -70,6 +85,9 @@ export const PhoneInput = ({
             ref: phoneRef3,
             maxLength: 1,
             autoComplete: "off",
+            onKeyDown: (e) => {
+              onKeyDown(e);
+            },
           }}
         />
       </div>

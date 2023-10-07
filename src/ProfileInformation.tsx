@@ -1,5 +1,5 @@
 import { UserInformation } from "./types";
-import { capitalize, formatPhoneNumber } from "./utils/transformations";
+import { capitalize, formatPhone } from "./utils/transformations";
 
 export const InfoRow = ({ label, value }: { label: string; value: string }) => {
   return (
@@ -43,7 +43,7 @@ export const ProfileInformation = ({
         <InfoRow label="Last Name" value={capitalize(lastName)} />
         <InfoRow label="City" value={city} />
         {/* You will need to format the string "nnnnnnn" as "nn-nn-nn-n" */}
-        <InfoRow label="Phone" value={formatPhoneNumber(phone)} />
+        <InfoRow label="Phone" value={formatPhone(phone)} />
       </div>
     </>
   );
